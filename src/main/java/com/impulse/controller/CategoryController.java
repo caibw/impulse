@@ -18,6 +18,7 @@ import springfox.petstore.model.Pet;
 
 @RestController
 public class CategoryController {
+
   @RequestMapping(value = "/category/Resource", method = RequestMethod.GET)
   public ResponseEntity<String> search(@RequestParam(value = "someEnum") final Category someEnum) {
     return ResponseEntity.ok(someEnum.name());
@@ -52,6 +53,9 @@ public class CategoryController {
   }
 
   private enum Category {
+
     ONE, TWO, THREE
+
   }
+
 }

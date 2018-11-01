@@ -13,4 +13,5 @@ public class ImpulseApplication {
   public static void main(final String[] args) {
     SpringApplication.run(ImpulseApplication.class, "--debug");
   }
+
 }

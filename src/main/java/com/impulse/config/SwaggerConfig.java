@@ -18,6 +18,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
+
   @Bean
   public Docket testApi() {
     return new Docket(DocumentationType.SWAGGER_2).groupName("test-api").apiInfo(this.apiInfo())
@@ -47,4 +48,5 @@ public class SwaggerConfig {
         .termsOfServiceUrl("http://springfox.io").license("Apache License Version 2.0")
         .version("2.0").build();
   }
+
 }
