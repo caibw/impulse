@@ -21,13 +21,13 @@ public class SwaggerConfig {
 
   @Bean
   public Docket testApi() {
-    return new Docket(DocumentationType.SWAGGER_2).groupName("test-api").apiInfo(this.apiInfo())
+    return new Docket(DocumentationType.SWAGGER_2).groupName("version-api").apiInfo(this.apiInfo())
         .select().paths(this.testPath()).build().ignoredParameterTypes(ApiIgnore.class)
         .enableUrlTemplating(true);
   }
 
   private Predicate<String> testPath() {
-    return regex("/test");
+    return regex("/version");
   }
 
   @Bean
