@@ -16,7 +16,7 @@ public class VersionController {
   private ProjectInfoAutoConfiguration infor;
 
   @RequestMapping(value = "/version", method = RequestMethod.GET)
-  public Map<String, String> test() throws Exception {
+  public Map<String, String> getVersionInfor() throws Exception {
     final GitProperties gitProperties = this.infor.gitProperties();
     final Map<String, String> result = new HashMap<>();
     gitProperties.forEach(e -> result.put(e.getKey(), e.getValue()));
