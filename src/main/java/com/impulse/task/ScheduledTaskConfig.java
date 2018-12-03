@@ -1,4 +1,4 @@
-package com.impulse.config;
+package com.impulse.task;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.task.TaskSchedulingProperties;
