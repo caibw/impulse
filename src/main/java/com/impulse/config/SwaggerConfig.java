@@ -31,15 +31,15 @@ public class SwaggerConfig {
   }
 
   @Bean
-  public Docket categoryApi() {
-    return new Docket(DocumentationType.SWAGGER_2).groupName("category-api").apiInfo(this.apiInfo())
-        .select().paths(this.categoryPaths()).build().ignoredParameterTypes(ApiIgnore.class)
+  public Docket studentApi() {
+    return new Docket(DocumentationType.SWAGGER_2).groupName("student-api").apiInfo(this.apiInfo())
+        .select().paths(this.studentPaths()).build().ignoredParameterTypes(ApiIgnore.class)
         .enableUrlTemplating(true);
   }
 
   @SuppressWarnings("unchecked")
-  private Predicate<String> categoryPaths() {
-    return or(regex("/category.*"), regex("/category"), regex("/categories"));
+  private Predicate<String> studentPaths() {
+    return or(regex("/student.*"), regex("/student"), regex("/student"));
   }
 
   private ApiInfo apiInfo() {
@@ -48,5 +48,4 @@ public class SwaggerConfig {
         .termsOfServiceUrl("http://springfox.io").license("Apache License Version 2.0")
         .version("2.0").build();
   }
-
 }

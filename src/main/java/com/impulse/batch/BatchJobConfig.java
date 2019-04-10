@@ -37,7 +37,8 @@ public class BatchJobConfig {
 
   @Bean
   public Job job() throws Exception {
-    return this.jobs.get("job").listener(this.listener()).start(this.step1()).build();
+    // return this.jobs.get("job").listener(this.listener()).start(this.step1()).build();
+    return null;
   }
 
   @Bean

@@ -1,11 +1,11 @@
-package com.impulse.controller;
+package com.impulse.config;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.info.ProjectInfoAutoConfiguration;
-import org.springframework.boot.info.GitProperties;
+import org.springframework.boot.info.BuildProperties;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,9 +17,10 @@ public class VersionController {
 
   @RequestMapping(value = "/version", method = RequestMethod.GET)
   public Map<String, String> getVersionInfor() throws Exception {
-    final GitProperties gitProperties = this.infor.gitProperties();
+    final BuildProperties buildProperties = this.infor.buildProperties();
     final Map<String, String> result = new HashMap<>();
-    gitProperties.forEach(e -> result.put(e.getKey(), e.getValue()));
+    buildProperties.forEach(e -> result.put(e.getKey(), e.getValue()));
     return result;
   }
 }
+
