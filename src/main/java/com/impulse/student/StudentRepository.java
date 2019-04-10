@@ -7,6 +7,8 @@ import java.util.function.Supplier;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
+
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -15,6 +17,7 @@ public class StudentRepository {
   @PersistenceContext
   private EntityManager entityManager;
 
+  @Transactional
   public void addOrUpdate(final Student student) {
     final Consumer<Student> cons = stu -> this.entityManager.merge(stu);
     cons.accept(student);
@@ -32,6 +35,7 @@ public class StudentRepository {
 
   }
 
+  @Transactional
   public void delete(final Student student) {
     final Consumer<Student> cons = stu -> this.entityManager.remove(stu);
     cons.accept(student);

@@ -9,17 +9,24 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
+@ApiModel(value = "student")
 @Entity
 @Table(name = "student")
 public class Student implements Serializable {
   private static final long serialVersionUID = 1L;
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private int id;
 
+  @ApiModelProperty(value = "student name", dataType = "string", example = "testName")
   @Column(unique = true)
   private String name;
 
+  @ApiModelProperty(value = "student age", dataType = "int", example = "30")
+  @Column
   private int age;
 
   public int getId() {
