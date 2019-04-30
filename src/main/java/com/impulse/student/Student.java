@@ -19,6 +19,7 @@ public class Student implements Serializable {
   private static final long serialVersionUID = 1L;
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @ApiModelProperty(hidden = true)
   private int id;
 
   @ApiModelProperty(value = "student name", dataType = "string", example = "testName")
