@@ -17,20 +17,20 @@
       <property name="forceBigDecimals" value="false" />
     </javaTypeResolver>
 
-    <javaModelGenerator targetPackage="com.mybatis" targetProject="C:\SR\impulse\src\main\java">
+    <javaModelGenerator targetPackage="com.impulse.course" targetProject="C:\SR\impulse\src\main\java">
       <property name="enableSubPackages" value="true" />
       <property name="trimStrings" value="true" />
     </javaModelGenerator>
 
-    <sqlMapGenerator targetPackage="student.xml"  targetProject="C:\SR\impulse\src\main\resources\mybatis">
+    <sqlMapGenerator targetPackage="course.xml"  targetProject="C:\SR\impulse\src\main\resources\mybatis">
       <property name="enableSubPackages" value="true" />
     </sqlMapGenerator>
 
-    <javaClientGenerator type="XMLMAPPER" targetPackage="com.mybatis"  targetProject="C:\SR\impulse\src\main\java">
+    <javaClientGenerator type="XMLMAPPER" targetPackage="com.impulse.course"  targetProject="C:\SR\impulse\src\main\java">
       <property name="enableSubPackages" value="true" />
     </javaClientGenerator>
 
-    <table tableName="student" domainObjectName="Student" ></table>
+    <table tableName="course" domainObjectName="Course" ></table>
 
   </context>
 </generatorConfiguration>

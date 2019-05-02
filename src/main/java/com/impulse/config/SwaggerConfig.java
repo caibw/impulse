@@ -37,10 +37,21 @@ public class SwaggerConfig {
         .enableUrlTemplating(true);
   }
 
-  @SuppressWarnings("unchecked")
   private Predicate<String> studentPaths() {
-    return or(regex("/student.*"), regex("/student"), regex("/student"));
+    return or(regex("/student.*"), regex("/student"));
   }
+
+  @Bean
+  public Docket coursetApi() {
+    return new Docket(DocumentationType.SWAGGER_2).groupName("course-api").apiInfo(this.apiInfo())
+        .select().paths(this.coursePaths()).build().ignoredParameterTypes(ApiIgnore.class)
+        .enableUrlTemplating(true);
+  }
+
+  private Predicate<String> coursePaths() {
+    return or(regex("/course.*"), regex("/course"));
+  }
+
 
   private ApiInfo apiInfo() {
     return new ApiInfoBuilder().title("Open api using swagger.")
